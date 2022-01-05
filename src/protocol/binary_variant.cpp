@@ -797,6 +797,10 @@ std::string Variant::ToString() const
           str << OpcUa::ToString(boost::any_cast<DateTime> (Value)); //As<DateTime>());
           break;
 
+        case VariantType::LOCALIZED_TEXT:
+          str << boost::any_cast<LocalizedText> (Value);
+          break;
+        
         case VariantType::STRING:
           str << boost::any_cast<std::string> (Value);
           break;
